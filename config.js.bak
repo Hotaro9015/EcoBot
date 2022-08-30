@@ -1,0 +1,23 @@
+module.exports = {
+    Bot: {
+    token: process.env.token,
+    prefix: ["$getServerVar[prefix]","<@$clientID>","Eco","Eco "],
+    intents: "all",
+    database: {
+        type:'default',
+        db:require('dbdjs.db'),
+        path:"./data/",
+        tables:["EcoBot"],
+        promisify:false
+    },
+    respondOnEdit: {
+        commands: true
+    },
+    debug: {
+        interpreter : true 
+},
+    suppressAllErrors: {
+        errorMessage: ["", "{newEmbed:{title:Opps!}{description:<:no:986620613537959946> **There is an error!**}{color:ff0000}}"]
+    }
+}
+}
